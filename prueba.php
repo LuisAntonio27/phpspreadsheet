@@ -18,3 +18,4 @@ $sheet->setCellValue('A1', 'Hello World !');
 //crea el archivo excel con su nombre y lo guarda en el servidor
 $writer = new Xlsx($spreadsheet);
 $writer->save('hello world.xlsx');
+echo "hola mundo creado";

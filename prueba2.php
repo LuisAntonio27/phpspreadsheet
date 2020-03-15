@@ -46,7 +46,6 @@ $sheet->setCellValue('A3',"String")
 		->setCellValue('B3',"UTF-8")
 		->setCellValue('C3',"добро пожаловать в мой учебник видео");
 
-
 //integer
 $sheet->setCellValue('A4',"Number")
 		->setCellValue('B4',"Integer")
@@ -70,11 +69,13 @@ $sheet->setCellValue('A7',"Number")
 //date datatype
 //make a variable from current timestamp
 $dateTimeNow = time();
+$hoy = date('d-m-Y');
 
 //date
 $sheet->setCellValue('A8',"Date/Time")
 		->setCellValue('B8',"Date")
-		->setCellValue('C8',Date::PHPToExcel($dateTimeNow));
+		->setCellValue('C8',Date::PHPToExcel($dateTimeNow))
+		->setCellValue('D8',$hoy);
 
 //set the cell format into a date
 $sheet->getStyle('C8')
@@ -140,5 +141,5 @@ $sheet->setTitle('Phpspreadsheet');
 
 //crea el archivo excel con su nombre y lo guarda en el servidor
 $writer = new Xlsx($spreadsheet);
-$writer->save('hello world.xlsx');
-echo "archivo creado";
+$writer->save('formatos_valores.xlsx');
+echo "archivo formatos_valores creado";
